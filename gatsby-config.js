@@ -30,5 +30,30 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    'gatsby-plugin-postcss',
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://unbaul.com/rss.xml`,
+        name: `Blog`,
+        parserOption: {
+          customFields: {
+            item: ['featuredImage']
+          }
+        }
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://recetario.unbaul.com/rss.xml`,
+        name: `Recetario`,
+        parserOption: {
+          customFields: {
+            item: ['featuredImage']
+          }
+        }
+      }
+    }
   ],
 }
