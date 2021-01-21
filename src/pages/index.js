@@ -54,13 +54,16 @@ const IndexPage = () => {
 
   const blogPosts = data.allFeedBlog.nodes.map(node => Object.assign(Object.assign(node, data.feedRecetarioMeta), {
     sourceName: "UnBaúl.com",
-    sourceIcon: <span role="img" aria-label="Emoji escritor">✍🏼</span>
+    sourceIcon: <span role="img" aria-label="Emoji escritor">✍🏼</span>,
+    pubDate: new Date(node.pubDate)
   }))
   const recetarioPosts = data.allFeedRecetario.nodes.map(node => Object.assign(Object.assign(node, data.feedRecetarioMeta), {
     sourceName: "Recetario",
-    sourceIcon: <span role="img" aria-label="Emoji cocinero">👨‍🍳</span>
+    sourceIcon: <span role="img" aria-label="Emoji cocinero">👨‍🍳</span>,
+    pubDate: new Date(node.pubDate)
   }))
-  const allPosts = blogPosts.concat(recetarioPosts).sort((a, b) => new Date(a.pubDate) < new Date(b.pubDate))
+  let allPosts = blogPosts.concat(recetarioPosts)
+  allPosts.sort((a, b) => b.pubDate - a.pubDate)
 
   return (
 

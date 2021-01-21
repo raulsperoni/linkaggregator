@@ -4,7 +4,6 @@ import React from "react"
 const Card = ({ idx, sourceTitle, sourceIcon, title, pubDate, link, featuredImage, contentSnippet }) => {
 
 
-  const fecha = new Date(pubDate)
   return (
     <a key={idx} href={link} className="w-full md:w-2/3 mx-auto my-5 lg:max-w-full lg:flex shadow-lg">
       <img alt="Placeholder"
@@ -21,7 +20,7 @@ const Card = ({ idx, sourceTitle, sourceIcon, title, pubDate, link, featuredImag
           <span className="text-3xl">{sourceIcon}</span>
           <div className="flex items-center justify-between text-sm ml-2">
             <p className="text-black leading-none">publicado en <b>{sourceTitle}</b></p>
-            <p className="ml-10 text-grey-dark"><small>{fecha.toLocaleDateString()}</small></p>
+            <p className="ml-10 text-grey-dark"><small>{pubDate.toLocaleDateString()}</small></p>
           </div>
         </div>
       </div>
