@@ -67,9 +67,9 @@ const IndexPage = () => {
 
     <Layout>
       <SEO title="Agregador de Links" />
-      <div className="mx-auto w-11/12 md:w-10/12 lg:w-2/3 flex flex-col">
-        {allPosts.map(node => (
-          <Card title={node.title}
+      <div className="mx-auto w-11/12 md:w-8/12 lg:w-5/12 flex flex-col">
+        {allPosts.map((node, index) => (
+          <Card key={"card_"+index} idx={index} title={node.title}
                 contentSnippet={node.contentSnippet}
                 featuredImage={node.featuredImage}
                 link={node.link}

@@ -17,7 +17,7 @@ const Header = ({ siteTitle, social, links }) => (
       <div className="mt-3 flex mx-auto justify-around">
         <a href={"https://www.instagram.com/" + social.instagram}><FaInstagram/></a>
         <a href={"https://twitter.com/" + social.twitter}><FaTwitter/></a>
-        {links.map(link => <a href={link}><FaLink/></a>)}
+        {links.map((link, index) => <a key={"link_"+index} href={link}><FaLink/></a>)}
       </div>
     </div>
   </header>

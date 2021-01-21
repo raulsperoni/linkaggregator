@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 import React from "react"
 
-const Card = ({ sourceTitle, sourceIcon, title, pubDate, link, featuredImage, contentSnippet }) => {
+const Card = ({ idx, sourceTitle, sourceIcon, title, pubDate, link, featuredImage, contentSnippet }) => {
 
 
   const fecha = new Date(pubDate)
   return (
-    <a href={link} className="w-full md:w-2/3 mx-auto my-5 lg:max-w-full lg:flex shadow-lg">
+    <a key={idx} href={link} className="w-full md:w-2/3 mx-auto my-5 lg:max-w-full lg:flex shadow-lg">
       <img alt="Placeholder"
            className="w-full h-32 md:h-48 lg:h-auto lg:w-48 object-cover flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
            src={featuredImage} />
