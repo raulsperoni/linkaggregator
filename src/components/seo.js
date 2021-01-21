@@ -16,10 +16,14 @@ function SEO({ description, lang, meta, title }) {
       query {
         site {
           siteMetadata {
-            title
+            social {
+              instagram
+              twitter
+            }
+            links
             description
-            author
-          }
+            title
+           }
         }
       }
     `

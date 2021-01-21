@@ -17,28 +17,24 @@ const Layout = ({ children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
+          social {
+            instagram
+            twitter
+          }
+          links
+          description
           title
-        }
+         }
       }
     }
   `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} social={data.site.siteMetadata.social} links={data.site.siteMetadata.links}/>
+      <div>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
+        <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>

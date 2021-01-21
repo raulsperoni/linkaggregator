@@ -12,7 +12,11 @@ const IndexPage = () => {
       site {
         buildTime
         siteMetadata {
-          author
+          social {
+            instagram
+            twitter
+          }
+          links
           description
           title
         }
@@ -63,7 +67,7 @@ const IndexPage = () => {
 
     <Layout>
       <SEO title="Agregador de Links" />
-      <div className="flex flex-col">
+      <div className="mx-auto w-11/12 md:w-10/12 lg:w-2/3 flex flex-col">
         {allPosts.map(node => (
           <Card title={node.title}
                 contentSnippet={node.contentSnippet}

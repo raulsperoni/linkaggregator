@@ -14,14 +14,14 @@ const Card = ({ sourceTitle, sourceIcon, title, pubDate, link, featuredImage, co
       <div
         className="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
         <div className="mb-4">
-          <div className="text-black font-bold text-xl mb-2">{title}</div>
+          <div className="text-blue-800 text-black font-bold text-xl mb-2">{title}</div>
           <p className="text-grey-darker text-sm">{contentSnippet}</p>
         </div>
         <div className="flex items-center">
           <span className="text-3xl">{sourceIcon}</span>
-          <div className="text-sm ml-2">
+          <div className="flex items-center justify-between text-sm ml-2">
             <p className="text-black leading-none">publicado en <b>{sourceTitle}</b></p>
-            <p className="text-grey-dark"><small>{fecha.toLocaleDateString()}</small></p>
+            <p className="ml-10 text-grey-dark"><small>{fecha.toLocaleDateString()}</small></p>
           </div>
         </div>
       </div>
