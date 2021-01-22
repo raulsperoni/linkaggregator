@@ -58,6 +58,21 @@ module.exports = {
           }
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-BGX3PM8B6F", // Google Analytics / GA
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
+        pluginConfig: {
+          head: true,
+
+        },
+      },
+    },
   ],
 }
